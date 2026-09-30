@@ -1,0 +1,212 @@
+[
+  {
+    "Fashion Publication": "Vogue",
+    "Type": "Magazine + Digital/Social",
+    "Main Focus": "High fashion, runway, editorial",
+    "Link": "https://www.vogue.com/",
+    "Image": "vogue.jpeg"
+  },
+  {
+    "Fashion Publication": "i-D",
+    "Type": "Magazine + Digital/Social",
+    "Main Focus": "Youth culture, experimental, fashion",
+    "Link": "https://i-d.co/",
+    "Image": "i-d.jpg"
+  },
+  {
+    "Fashion Publication": "Dazed",
+    "Type": "Magazine + Digital/Social",
+    "Main Focus": "Fashion, art, subculture",
+    "Link": "https://www.dazeddigital.com/",
+    "Image": "dazed.jpeg"
+  },
+  {
+    "Fashion Publication": "The Business of Fashion",
+    "Type": "Digital + Newsletter/Podcast",
+    "Main Focus": "Fashion industry and business",
+    "Link": "https://www.businessoffashion.com/",
+    "Image": "BOF.jpeg"
+  },
+  {
+    "Fashion Publication": "WWD",
+    "Type": "Trade Publication + Digital",
+    "Main Focus": "Fashion industry news",
+    "Link": "https://wwd.com/",
+    "Image": "WWD.jpeg"
+  },
+  {
+    "Fashion Publication": "The Cut",
+    "Type": "Digital Publication",
+    "Main Focus": "Fashion, culture, lifestyle",
+    "Link": "https://www.thecut.com/",
+    "Image": "TheCut.jpeg"
+  },
+  {
+    "Fashion Publication": "Highsnobiety",
+    "Type": "Digital Print/Social",
+    "Main Focus": "Streetwear, luxury, culture",
+    "Link": "https://www.highsnobiety.com/",
+    "Image": "Highsnobriety.jpeg"
+  },
+  {
+    "Fashion Publication": "Hypebeast",
+    "Type": "Digital + Social",
+    "Main Focus": "Streetwear, sneakers, culture",
+    "Link": "https://hypebeast.com/",
+    "Image": "hypebeast.jpeg"
+  },
+  {
+    "Fashion Publication": "AnOther Magazine",
+    "Type": "Magazine + Digital",
+    "Main Focus": "High fashion, art, photography",
+    "Link": "https://www.anothermag.com/",
+    "Image": "Anothermagazine.jpeg"
+  },
+  {
+    "Fashion Publication": "W Magazine",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Fashion editorials, celebrity",
+    "Link": "https://www.wmagazine.com/",
+    "Image": "Wmagazine.jpeg"
+  },
+  {
+    "Fashion Publication": "Harper's Bazaar",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Luxury fashion, beauty",
+    "Link": "https://www.harpersbazaar.com/",
+    "Image": "HarpersBaazar.jpg"
+  },
+  {
+    "Fashion Publication": "ELLE",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Fashion, beauty, culture",
+    "Link": "https://www.elle.com/",
+    "Image": "Elle.jpeg"
+  },
+  {
+    "Fashion Publication": "GQ",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Menswear, fashion, culture",
+    "Link": "https://www.gq.com/",
+    "Image": "GQ.jpeg"
+  },
+  {
+    "Fashion Publication": "L'Officiel",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Luxury and international fashion",
+    "Link": "https://www.lofficielusa.com/",
+    "Image": "LOfficiel.jpeg"
+  },
+  {
+    "Fashion Publication": "Numero",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Avant-garde fashion and art",
+    "Link": "https://numero.com/en/",
+    "Image": "Numero.jpg"
+  },
+  {
+    "Fashion Publication": "The Gentlewoman",
+    "Type": "Magazine",
+    "Main Focus": "Fashion, photography, profiles",
+    "Link": "https://thegentlewoman.co.uk/",
+    "Image": "TheGentlewoman.jpg"
+  },
+  {
+    "Fashion Publication": "032c",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Fashion, art, contemporary culture",
+    "Link": "https://magazine.032c.com/magazine",
+    "Image": "032c.jpeg"
+  },
+  {
+    "Fashion Publication": "Office Magazine",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Independent fashion and culture",
+    "Link": "https://officemagazine.net/",
+    "Image": "OfficeMagazine.jpeg"
+  },
+  {
+    "Fashion Publication": "Document Journal",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Experimental fashion and art",
+    "Link": "https://linkin.bio/documentjournal/",
+    "Image": "DocumentJournal.jpg"
+  },
+  {
+    "Fashion Publication": "Purple Fashion",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Independent and avant-garde fashion",
+    "Link": "https://purple.fr/fashion/",
+    "Image": "PurpleFashion.jpg"
+  },
+  {
+    "Fashion Publication": "10 Magazine",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Luxury and contemporary fashion",
+    "Link": "https://10magazine.com/",
+    "Image": "10Magazine.jpeg"
+  },
+  {
+    "Fashion Publication": "Wonderland",
+    "Type": "Magazine + Digital",
+    "Main Focus": "Fashion, music, celebrity culture",
+    "Link": "https://www.wonderlandmagazine.com/",
+    "Image": "Wonderland.jpeg"
+  },
+  {
+    "Fashion Publication": "HUNGER",
+    "Type": "Digital Publication",
+    "Main Focus": "Fashion, photography, culture",
+    "Link": "https://hungermag.com/",
+    "Image": "Hunger.jpeg"
+  },
+  {
+    "Fashion Publication": "Fashionista",
+    "Type": "Digital Publication",
+    "Main Focus": "Fashion industry, careers, trends",
+    "Link": "https://fashionista.com/",
+    "Image": "Fashionista.jpeg"
+  },
+  {
+    "Fashion Publication": "Who What Wear",
+    "Type": "Digital + Social",
+    "Main Focus": "Trends, shopping, everyday fashion",
+    "Link": "https://www.whowhatwear.com/",
+    "Image": "WWW.jpg"
+  },
+  {
+    "Fashion Publication": "Vogue Business",
+    "Type": "Digital/Industry",
+    "Main Focus": "Fashion business and technology",
+    "Link": "https://www.vogue.com/business",
+    "Image": "VogueBusiness.jpeg"
+  },
+  {
+    "Fashion Publication": "SHOWstudio",
+    "Type": "Digital/Multimedia",
+    "Main Focus": "Fashion film, photography, art",
+    "Link": "https://www.showstudio.com/tags/magazines",
+    "Image": "ShowStudio.jpeg"
+  },
+  {
+    "Fashion Publication": "FashionUnited",
+    "Type": "Digital Trade Publication",
+    "Main Focus": "Fashion industry and retail",
+    "Link": "https://fashionunited.com/",
+    "Image": "FashionUnited.jpeg"
+  },
+  {
+    "Fashion Publication": "Vestoj",
+    "Type": "Journal",
+    "Main Focus": "Critical fashion theory and culture",
+    "Link": "https://vestoj.com/",
+    "Image": "Vestoj.jpeg"
+  },
+  {
+    "Fashion Publication": "System Magazine",
+    "Type": "Magazine/Digital",
+    "Main Focus": "Fashion industry and long-form interviews",
+    "Link": "https://system-magazine.com/",
+    "Image": "SystemMagazine.jpg"
+  }
+]

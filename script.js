@@ -1,107 +1,191 @@
-// Get the text input
-const word = document.getElementById("word");
-const titleInput = document.getElementById("title-input");
+// Store all publications
+let publications = [];
 
-// Get the sliders
-const icecreamSizeInput = document.getElementById("icecream-size");
-
-const cherryXInput = document.getElementById("cherry-x");
-const cherryYInput = document.getElementById("cherry-y");
-
-const oreoXInput = document.getElementById("oreo-x");
-const oreoYInput = document.getElementById("oreo-y");
-const oreoSizeInput = document.getElementById("oreo-size");
-
-const coneSizeInput = document.getElementById("cone-size");
-
-// Get the images
-const icecream = document.getElementById("icecream");
-const cherry = document.getElementById("cherry");
-const oreo = document.getElementById("oreo");
-const cone = document.getElementById("cone");
+// Current filters
+let selectedType = "all";
+let selectedFocus = "all";
+let searchTerm = "";
 
 
-// -----------------------------
-// ICE CREAM NAME
-// -----------------------------
+// LOAD JSON
+fetch("data.json")
+    .then(response => response.json())
+    .then(json => {
 
-function updateText() {
-  word.textContent = titleInput.value || "ice cream dream";
+        console.log(json);
+
+        publications = json;
+
+        displayPublications(publications);
+
+    })
+    .catch(error => console.log("error", error));
+
+
+// CREATE PUBLICATION CARD
+function makePublication(publication) {
+
+    let publicationSection = document.querySelector("#publications");
+
+    let newPublication = document.createElement("div");
+
+    newPublication.classList.add("card");
+
+    newPublication.innerHTML = `
+
+        <a 
+            href="${publication["Link"]}" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="publicationImageLink"
+        >
+            <img 
+                src="${publication["Image"]}" 
+                alt="${publication["Fashion Publication"]}"
+                class="publicationImage"
+            >
+        </a>
+
+        <h2 class="publicationTitle">
+            ${publication["Fashion Publication"]}
+        </h2>
+
+        <p class="publicationType">
+            ${publication["Type"]}
+        </p>
+
+        <p class="publicationFocus">
+            ${publication["Main Focus"]}
+        </p>
+
+    `;
+
+    publicationSection.appendChild(newPublication);
 }
 
 
-// -----------------------------
-// ICE CREAM SIZE
-// -----------------------------
+// DISPLAY PUBLICATIONS
+function displayPublications(list) {
 
-function updateIcecream() {
-  const scale = Number(icecreamSizeInput.value);
+    let publicationSection = document.querySelector("#publications");
 
-  icecream.style.transform = `scale(${scale})`;
+    publicationSection.innerHTML = "";
+
+    for (let i = 0; i < list.length; i++) {
+
+        makePublication(list[i]);
+
+    }
 }
 
 
-// -----------------------------
-// CHERRY POSITION
-// -----------------------------
+// FILTER PUBLICATIONS
+function filterPublications() {
 
-function updateCherry() {
-  const x = Number(cherryXInput.value);
-  const y = Number(cherryYInput.value);
+    let filteredPublications = publications.filter(function(publication) {
 
-  cherry.style.transform = `translate(${x}px, ${y}px)`;
+        let name = publication["Fashion Publication"].toLowerCase();
+        let type = publication["Type"].toLowerCase();
+        let focus = publication["Main Focus"].toLowerCase();
+
+
+        // Search
+        let matchesSearch =
+            name.includes(searchTerm) ||
+            type.includes(searchTerm) ||
+            focus.includes(searchTerm);
+
+
+        // Type
+        let matchesType =
+            selectedType === "all" ||
+            type.includes(selectedType);
+
+
+        // Focus
+        let matchesFocus =
+            selectedFocus === "all" ||
+            focus.includes(selectedFocus);
+
+        return matchesSearch && matchesType && matchesFocus;
+
+    });
+
+
+    displayPublications(filteredPublications);
 }
 
 
-// -----------------------------
-// OREO POSITION + SIZE
-// -----------------------------
+// SEARCH
+document.querySelector("#searchInput").addEventListener("input", function(event) {
 
-function updateOreo() {
-  const x = Number(oreoXInput.value);
-  const y = Number(oreoYInput.value);
-  const scale = Number(oreoSizeInput.value);
+    searchTerm = event.target.value.toLowerCase();
 
-  oreo.style.transform =
-    `translate(${x}px, ${y}px) scale(${scale})`;
+    filterPublications();
+
+});
+
+
+// TYPE BUTTONS
+let typeFilters = document.querySelectorAll(".typeFilter");
+
+for (let i = 0; i < typeFilters.length; i++) {
+
+    typeFilters[i].addEventListener("click", function(event) {
+
+        // Find which button was clicked
+        selectedType = event.target.getAttribute("data-type");
+
+        console.log("Type selected:", selectedType);
+
+
+        // Remove selected from all buttons
+        for (let j = 0; j < typeFilters.length; j++) {
+
+            typeFilters[j].classList.remove("selected");
+
+        }
+
+
+        // Add selected to clicked button
+        event.target.classList.add("selected");
+
+
+        // Filter the data
+        filterPublications();
+
+    });
+
 }
 
 
-// -----------------------------
-// CONE SIZE
-// -----------------------------
+// FOCUS BUTTONS
+let focusFilters = document.querySelectorAll(".focusFilter");
 
-function updateCone() {
-  const scale = Number(coneSizeInput.value);
+for (let i = 0; i < focusFilters.length; i++) {
 
-  cone.style.transform = `scale(${scale})`;
+    focusFilters[i].addEventListener("click", function(event) {
+
+        selectedFocus = event.target.getAttribute("data-focus");
+
+        console.log("Focus selected:", selectedFocus);
+
+
+        // Remove selected from all
+        for (let j = 0; j < focusFilters.length; j++) {
+
+            focusFilters[j].classList.remove("selected");
+
+        }
+
+
+        // Add selected to clicked
+        event.target.classList.add("selected");
+
+
+        // Filter
+        filterPublications();
+
+    });
+
 }
-
-
-// -----------------------------
-// EVENT LISTENERS
-// -----------------------------
-
-titleInput.addEventListener("input", updateText);
-
-icecreamSizeInput.addEventListener("input", updateIcecream);
-
-cherryXInput.addEventListener("input", updateCherry);
-cherryYInput.addEventListener("input", updateCherry);
-
-oreoXInput.addEventListener("input", updateOreo);
-oreoYInput.addEventListener("input", updateOreo);
-oreoSizeInput.addEventListener("input", updateOreo);
-
-coneSizeInput.addEventListener("input", updateCone);
-
-
-// -----------------------------
-// INITIALIZE
-// -----------------------------
-
-updateText();
-updateIcecream();
-updateCherry();
-updateOreo();
-updateCone();
