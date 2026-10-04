@@ -1,175 +1,445 @@
-
-.stalinist-one-regular {
-  font-family: "Stalinist One", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.micro-5-charted-regular {
-  font-family: "Micro 5 Charted", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
+/* ========================================
+   GLOBAL
+======================================== */
 
 * {
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     padding: 0;
 
-    font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f1ec;
     color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* HEADER */
 
-header {
-    margin-bottom: 50px;
+/* ========================================
+   FONTS
+======================================== */
+
+.micro-5-charted-regular {
+    font-family: "Micro 5 Charted", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-h1 {
-    font-size: 50px;
+
+.rubik-80s-fade-regular {
+    font-family: "Rubik 80s Fade", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.ballet {
+    font-family: "Ballet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* ========================================
+   ABOVE THE FOLD HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
     margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+
+/* ========================================
+   HERO DESCRIPTION
+======================================== */
+
+.hero-label {
+    position: absolute;
+
+    top: 35px;
+    left: 40px;
+
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.4;
+
+    z-index: 4;
+}
+
+
+
+/* ========================================
+   HERO CENTER
+======================================== */
+
+.hero-center {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* ========================================
+   HUGE 2026
+======================================== */
+
+.hero-year {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Rubik 80s Fade", system-ui;
+    font-weight: 400;
+
+    /*
+       Change this number if you want
+       the year bigger or smaller.
+    */
+    font-size: 38vw;
+
+    line-height: 0.75;
+
+    white-space: nowrap;
+
+    color: #111;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* ========================================
+   TITLE CAROUSEL
+======================================== */
+
+.title-carousel {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20px 0;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+
+/* ========================================
+   MOVING TRACK
+======================================== */
+
+.title-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: titleScroll 12s linear infinite;
+}
+
+
+
+/* ========================================
+   TITLE GROUP
+======================================== */
+
+.title-group {
+    display: flex;
+    flex-shrink: 0;
+}
+
+
+
+/* ========================================
+   FASHION PUBLICATIONS TITLE
+======================================== */
+
+.title-group h1 {
+    flex-shrink: 0;
+
+    margin: 0;
+    padding-right: 20px;
+
+    white-space: nowrap;
+
+    font-family: "Micro 5 Charted", sans-serif;
+
+    font-size: 70px;
+    font-weight: 400;
+
     text-transform: uppercase;
 }
 
-header p {
-    font-size: 18px;
+
+
+/* ========================================
+   CAROUSEL ANIMATION
+======================================== */
+
+@keyframes titleScroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
 }
 
 
-/* SEARCH */
+
+/* ========================================
+   EXPLORE BUTTON
+======================================== */
+
+.scroll-button {
+    position: absolute;
+
+    right: 40px;
+    bottom: 35px;
+
+    z-index: 4;
+
+    padding: 10px 18px;
+
+    border: 1px solid black;
+
+    background-color: transparent;
+
+    color: black;
+
+    font-size: 14px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: 0.2s;
+}
+
+
+.scroll-button:hover {
+    background-color: black;
+
+    color: #f4f1ec;
+}
+
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+main {
+    padding: 60px 40px 40px 40px;
+}
+
+
+
+/* ========================================
+   SEARCH
+======================================== */
 
 .search-area {
+    width: 100%;
+
     margin-bottom: 40px;
+
+    /*
+       This keeps the search from hiding
+       behind the top of the browser when
+       Explore is clicked.
+    */
+    scroll-margin-top: 30px;
 }
+
 
 #searchInput {
     width: 100%;
+
     padding: 15px;
 
-    font-size: 18px;
-
     border: 1px solid black;
-    background: transparent;
+
+    background-color: transparent;
+
+    color: black;
+
+    font-size: 18px;
 }
 
 
-/* FILTER SECTIONS */
+
+/* ========================================
+   FILTER SECTIONS
+======================================== */
 
 .filters {
     margin-bottom: 30px;
 }
 
+
 .filters h2 {
+    margin-bottom: 10px;
+
     font-size: 16px;
+
     text-transform: uppercase;
 }
 
-.filters ul {
+
+
+/* ========================================
+   PUBLICATION TYPE BUTTONS
+======================================== */
+
+.filter-buttons {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 10px;
-
-    list-style: none;
-
-    padding: 0;
 }
 
 
-/* FILTER BUTTONS */
+
+/* ========================================
+   MAIN FOCUS BUTTONS
+======================================== */
+
+.filters ul {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+
+/* ========================================
+   ALL FILTER BUTTONS
+======================================== */
 
 .filter {
-
     padding: 8px 14px;
+
+    border: 1px solid black;
+
+    background-color: transparent;
+
+    color: black;
+
+    font-family: inherit;
+    font-size: 14px;
 
     cursor: pointer;
 
     transition: 0.2s;
 }
 
+
 .filter:hover {
-    background: black;
+    background-color: black;
+
     color: white;
 }
+
 
 .filter.selected {
-    background: black;
+    background-color: black;
+
     color: white;
 }
 
 
-/* PUBLICATION GRID */
+
+/* ========================================
+   PUBLICATION GRID
+======================================== */
 
 #publications {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 30px 20px;
 
     margin-top: 50px;
 }
 
 
-/* PUBLICATION CARD */
+
+/* ========================================
+   PUBLICATION CARD
+======================================== */
 
 .card {
+    min-width: 0;
 
     padding: 20px 0;
-
-    min-height: 180px;
-}
-
-.publicationTitle {
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.publicationType {
-    font-size: 14px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 8px;
-}
-
-.publicationFocus {
-    font-size: 16px;
 }
 
 
-.filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
 
-.filter {
-    border: 1px solid black;
-    padding: 8px 14px;
-    cursor: pointer;
-    background: transparent;
-}
-
-.filter:hover {
-    background: black;
-    color: white;
-}
-
-.filter.selected {
-    background: black;
-    color: white;
-}
+/* ========================================
+   PUBLICATION IMAGE AREA
+======================================== */
 
 .publicationImageLink {
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -179,187 +449,241 @@ header p {
     overflow: hidden;
 }
 
+
+
+/* ========================================
+   PUBLICATION IMAGE
+======================================== */
+
 .publicationImage {
+    display: block;
+
     width: 100%;
     height: 100%;
 
     object-fit: contain;
-
-    display: block;
 }
+
+
+
+/* ========================================
+   IMAGE HOVER
+======================================== */
 
 .publicationImage:hover {
     cursor: pointer;
-}
 
-.publicationImage:hover {
     animation: shake 0.25s ease-in-out;
 }
 
+
 @keyframes shake {
-    0%   { transform: rotate(0deg); }
-    25%  { transform: rotate(-2deg); }
-    50%  { transform: rotate(2deg); }
-    75%  { transform: rotate(-1deg); }
-    100% { transform: rotate(0deg); }
-}
 
-/* TITLE CAROUSEL */
-
-.title-carousel {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
-
-.title-track {
-    display: flex;
-    width: max-content;
-
-    animation: titleScroll 10s linear infinite;
-}
-
-.title-track h1 {
-    flex-shrink: 0;
-
-    white-space: nowrap;
-
-    font-size: 70px;
-
-    margin: 0;
-
-    padding-right: 15px;
-}
-
-
-/* TITLE ANIMATION */
-
-@keyframes titleScroll {
-
-    from {
-        transform: translateX(0);
+    0% {
+        transform: rotate(0deg);
     }
 
-    to {
-        transform: translateX(-25%);
+    25% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    75% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 
 }
 
-main {
-    padding: 0 40px 40px 40px;
-}
 
-.title-carousel {
-    padding: 30px 0;
-}
 
 /* ========================================
-   MOBILE / IPHONE RESPONSIVE DESIGN
-   Paste ALL of this at the bottom of CSS
+   PUBLICATION TEXT
+======================================== */
+
+.publicationTitle {
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+
+.publicationType {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+}
+
+
+.publicationFocus {
+    margin-top: 0;
+
+    font-size: 16px;
+}
+
+
+
+/* ========================================
+   MOBILE / IPHONE
 ======================================== */
 
 @media (max-width: 600px) {
 
-    /* PAGE */
-    body {
-        margin: 0;
-        padding: 0;
+
+    /* --------------------------
+       HERO
+    -------------------------- */
+
+    .hero {
+        height: 100svh;
+        min-height: 100svh;
     }
+
+
+
+    /* --------------------------
+       DESCRIPTION
+    -------------------------- */
+
+    .hero-label {
+        top: 25px;
+        left: 18px;
+
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+
+
+    /* --------------------------
+       CENTER
+    -------------------------- */
+
+    .hero-center {
+        height: 70svh;
+    }
+
+
+
+    /* --------------------------
+       2026
+    -------------------------- */
+
+    .hero-year {
+        font-size: 45vw;
+
+        line-height: 0.8;
+    }
+
+
+
+    /* --------------------------
+       CAROUSEL
+    -------------------------- */
+
+    .title-carousel {
+        padding: 10px 0;
+    }
+
+
+    .title-track {
+        animation-duration: 15s;
+    }
+
+
+    .title-group h1 {
+        font-size: 30px;
+
+        padding-right: 10px;
+    }
+
+
+
+    /* --------------------------
+       EXPLORE
+    -------------------------- */
+
+    .scroll-button {
+        right: 18px;
+        bottom: 25px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+
+
+    /* --------------------------
+       MAIN
+    -------------------------- */
 
     main {
-        padding: 0 18px 30px 18px;
+        padding: 40px 18px 30px 18px;
     }
 
 
-   /* MOBILE TITLE CAROUSEL */
 
-.title-carousel {
-    width: 100%;
-    overflow: hidden;
-    padding: 15px 0;
-    margin-bottom: 30px;
-}
+    /* --------------------------
+       SEARCH
+    -------------------------- */
 
-.title-track {
-    display: flex;
-    width: max-content;
-
-    /* slower on phone */
-    animation: titleScroll 15s linear infinite;
-}
-
-.title-track h1 {
-    flex-shrink: 0;
-    white-space: nowrap;
-
-    /* MUCH smaller on phone */
-    font-size: 30px;
-
-    margin: 0;
-
-    /* little space between repetitions */
-    padding-right: 20px;
-}
-
-
-    /* SEARCH BAR */
     .search-area {
-        width: 100%;
         margin-bottom: 30px;
     }
 
+
     #searchInput {
-        width: 100%;
         padding: 12px;
+
         font-size: 16px;
     }
 
 
-    /* FILTER SECTIONS */
+
+    /* --------------------------
+       FILTERS
+    -------------------------- */
+
     .filters {
-        width: 100%;
         margin-bottom: 25px;
     }
 
+
     .filters h2 {
         font-size: 14px;
-        margin-bottom: 10px;
     }
 
 
-    /* PUBLICATION TYPE BUTTONS */
-    .filter-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px;
-    }
-
-
-    /* MAIN FOCUS BUTTONS */
+    .filter-buttons,
     .filters ul {
-        display: flex;
-        flex-wrap: wrap;
         gap: 7px;
-
-        list-style: none;
-        padding: 0;
-        margin: 0;
     }
 
 
-    /* ALL FILTER BUTTONS */
     .filter {
-        font-size: 13px;
         padding: 7px 10px;
+
+        font-size: 13px;
     }
 
 
-    /* PUBLICATION GRID */
-    #publications {
-        display: grid;
 
-        /* TWO COVERS PER ROW */
+    /* --------------------------
+       PUBLICATIONS
+    -------------------------- */
+
+    #publications {
         grid-template-columns: repeat(2, 1fr);
 
         gap: 25px 12px;
@@ -368,69 +692,68 @@ main {
     }
 
 
-    /* PUBLICATION CARDS */
+
+    /* --------------------------
+       CARDS
+    -------------------------- */
+
     .card {
         width: 100%;
         min-width: 0;
+
         padding: 0;
     }
 
 
-    /* IMAGE CONTAINER */
+
+    /* --------------------------
+       IMAGES
+    -------------------------- */
+
     .publicationImageLink {
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
         width: 100%;
         height: 250px;
 
         padding: 5px;
-
-        overflow: hidden;
     }
 
 
-    /* PUBLICATION IMAGE */
     .publicationImage {
         width: 100%;
         height: 100%;
 
         object-fit: contain;
-
-        display: block;
     }
 
 
-    /* PUBLICATION NAME */
-    .publicationTitle {
-        font-size: 19px;
 
+    /* --------------------------
+       CARD TEXT
+    -------------------------- */
+
+    .publicationTitle {
         margin-top: 10px;
         margin-bottom: 10px;
+
+        font-size: 19px;
 
         overflow-wrap: break-word;
     }
 
 
-    /* PUBLICATION TYPE */
     .publicationType {
-        font-size: 11px;
-
         margin-top: 0;
         margin-bottom: 6px;
 
+        font-size: 11px;
         line-height: 1.3;
     }
 
 
-    /* PUBLICATION FOCUS */
     .publicationFocus {
-        font-size: 13px;
-
         margin-top: 0;
 
+        font-size: 13px;
         line-height: 1.4;
     }
 
