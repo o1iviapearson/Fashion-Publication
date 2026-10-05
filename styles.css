@@ -145,9 +145,8 @@ body {
 }
 
 
-
 /* ========================================
-   TITLE CAROUSEL
+   SEAMLESS TITLE CAROUSEL
 ======================================== */
 
 .title-carousel {
@@ -160,78 +159,82 @@ body {
 
     width: 100%;
 
-    margin: 0;
-    padding: 20px 0;
-
     overflow: hidden;
 
     z-index: 2;
 }
 
 
-
-/* ========================================
-   MOVING TRACK
-======================================== */
+/* ENTIRE MOVING STRIP */
 
 .title-track {
     display: flex;
 
     width: max-content;
 
-    animation: titleScroll 12s linear infinite;
+    animation: titleScroll 15s linear infinite;
+
+    will-change: transform;
 }
 
 
-
-/* ========================================
-   TITLE GROUP
-======================================== */
+/* EACH IDENTICAL HALF */
 
 .title-group {
     display: flex;
     flex-shrink: 0;
+
+    gap: 20px;
 }
 
 
-
-/* ========================================
-   FASHION PUBLICATIONS TITLE
-======================================== */
+/* INDIVIDUAL TITLES */
 
 .title-group h1 {
     flex-shrink: 0;
 
     margin: 0;
-    padding-right: 20px;
+
+    /* IMPORTANT: no padding here */
+    padding: 0;
 
     white-space: nowrap;
 
     font-family: "Micro 5 Charted", sans-serif;
-
     font-size: 70px;
     font-weight: 400;
+
+    line-height: 1;
 
     text-transform: uppercase;
 }
 
 
+/* ADD SPACE BETWEEN THE TWO GROUPS */
 
-/* ========================================
-   CAROUSEL ANIMATION
-======================================== */
+.title-group {
+    padding-right: 20px;
+}
+
+
+/* SEAMLESS MOVEMENT */
 
 @keyframes titleScroll {
 
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 
 }
+
+
+
+
+
 
 
 
