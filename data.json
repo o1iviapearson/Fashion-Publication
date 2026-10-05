@@ -29,7 +29,7 @@
   },
   {
     "Fashion Publication": "WWD",
-    "Type": "Trade Publication + Digital",
+    "Type": "Publication + Digital",
     "Main Focus": "Fashion industry news",
     "Link": "https://wwd.com/",
     "Image": "WWD.jpeg"
@@ -190,7 +190,7 @@
   },
   {
     "Fashion Publication": "FashionUnited",
-    "Type": "Digital Trade Publication",
+    "Type": "Digital Publication",
     "Main Focus": "Fashion industry and retail",
     "Link": "https://fashionunited.com/",
     "Image": "FashionUnited.jpeg"
